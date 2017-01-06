@@ -3,10 +3,16 @@
 
 body {
     font-family: 'Raleway', sans-serif;
+    padding-bottom: 70px;
+    margin-bottom: 0px;
 }
 
 p {
-    font-family: 'Libre Baskerville', serif;
+    //font-family: 'Libre Baskerville', serif;
+}
+
+h1 {
+  position: relative;
 }
 
 .jumbotron {
@@ -15,118 +21,163 @@ p {
     background-image: linear-gradient(120deg, #155799, #159957);
     margin-bottom: 0;
 }
-/* *********************************
-           Variables
-  ********************************** */
-$navbar-height: 50px;
-$big-logo-padding: 15px; // adjust these 2 values
-$small-logo-padding: 2px; // of bottom padding to look nice
-/* *********************************
-   Some Style Overrides on Bootstrap
-  ********************************** */
-.navbar-inverse {
-    background: rgba(62,195,246,0);
-    border-bottom: none;
-}
 
-.navbar-inverse .navbar-toggle {
-    border: 1px solid #333;
-    border-color: rgba(255,255,255,0.7);
-}
-
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-    border-color: transparent;
-    @media (max-width: 767px) {
-        background: rgba(255,255,255,0.75);
-    }
-}
-
-.navbar-inverse .navbar-nav > li > a {
-    color: white;
-    position: relative;
-    text-decoration: none;
-}
-
-/* Animate underline */
-.navbar-inverse .navbar-nav > li > a:before {
-  content: "";
+.footer {
   position: absolute;
-  width: 100%;
-  height: 2px;
+  right: 0;
   bottom: 0;
   left: 0;
-  background-color: white;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
+  padding: 1rem;
+  text-align: center;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+.social-link {
+    padding: 10px;
+    display: inline-block;
+    cursor: pointer
 }
 
-/*
-.navbar-inverse .navbar-nav > li > a:focus,
-.navbar-inverse .navbar-nav > li > a:hover {
-    color: #22F;
-}
-*/
 
-ul.nav {}
-/* *********************************
-           Toolbar Logo
-  ********************************** */
-.small-logo-container {
-    padding-top: $navbar-height;
-    height: $navbar-height;
-    overflow: hidden;
+a {
+    margin-bottom: 0;
+    display: inline-block;
+    position: relative;
+    color: #a22c26;
+    text-decoration: none;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0)
+}
+
+/************************************
+*** Animate links
+************************************/
+a:before {
+    content: '→';
     position: absolute;
+    top: 55%;
+    font-size: 16px;
+    opacity: 0;
+    color: #e1b26c;
+    -webkit-transform: translate(-400%, -50%);
+    -moz-transform: translate(-400%, -50%);
+    transform: translate(-400%, -50%);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
 }
 
-.small-logo {
-    color: white;
-    font-size: 2.5em;
-    padding-bottom: $small-logo-padding;
+a:hover {
+    color: #e1b26c;
+    -webkit-transform: translate(20px, 0);
+    -moz-transform: translate(20px, 0);
+    transform: translate(20px, 0)
 }
-/* *********************************
-           Big Logo
-  ********************************** */
-.big-logo-row {
-    color: #fff;
-    background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957);
 
-    .big-logo-container {
-        padding-top: $navbar-height;
-    }
+a:hover:before {
+    opacity: 1;
+    -webkit-transform: translate(-20px, -50%);
+    -moz-transform: translate(-20px, -50%);
+    transform: translate(-20px, -50%)
+}
 
-    h1 {
-        font-size: 4em;
-        margin: 0;
-        padding: 0 0 $big-logo-padding;
-        @media (min-width: 400px) {
-            font-size: 4.5em;
-        }
-        @media (min-width: 440px) {
-            font-size: 5.5em;
-        }
-        @media (min-width: 500px) {
-            font-size: 6.5em;
-        }
-        @media (min-width: 630px) {
-            font-size: 7.5em;
-        }
-        @media (min-width: 768px) {
-            font-size: 9em;
-            padding-bottom: $big-logo-padding * 2;
-        }
-        @media (min-width: 1200px) {
-            font-size: 12em;
-        }
-    }
+/************************************
+***  Text Animations
+************************************/
+.content {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  line-height: 40px;
+  font-family: 'Raleway', sans-serif;
+  //color: #ecf0f1;
+  color: black;
+  height: 160px;
+  overflow: hidden;
+}
+
+.visible {
+  font-weight:600;
+  overflow:hidden;
+  height:40px;
+  padding:0 40px;
+
+  &:before {
+    content:'[';
+    left: 0;
+    line-height:40px;
+  }
+  &:after {
+    content:']';
+    position:absolute;
+    right: 0;
+    line-height:40px;
+  }
+  &:after, &:before {
+    position:absolute;
+    top:0;
+    color:#16a085;
+    font-size:42px;
+    -webkit-animation-name: opacity;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+  }
+}
+
+p {
+  display:inline;
+  float:left;
+  margin:0;
+}
+
+#name-list {
+  margin-top:0;
+  padding-left:110px;
+  text-align:left;
+  list-style:none;
+  -webkit-animation-name: change;
+  -webkit-animation-duration: 6s;
+  -webkit-animation-iteration-count: infinite;
+  animation-name: change;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
+#name-list li {
+  line-height:40px;
+  margin:0;
+}
+
+@-webkit-keyframes opacity {
+  0%, 100% {opacity:0;}
+  50% {opacity:1;}
+}
+
+@-webkit-keyframes change {
+  0%, 12%, 100% {transform:translateY(0);}
+  17%,29% {transform:translateY(-25%);}
+  34%,46% {transform:translateY(-50%);}
+  51%,63% {transform:translateY(-75%);}
+  68%,80% {transform:translateY(-50%);}
+  85%,97% {transform:translateY(-25%);}
+}
+
+@keyframes opacity {
+  0%, 100% {opacity:0;}
+  50% {opacity:1;}
+}
+
+@keyframes change {
+  0%, 12%, 100% {transform:translateY(0);}
+  17%,29% {transform:translateY(-25%);}
+  34%,46% {transform:translateY(-50%);}
+  51%,63% {transform:translateY(-75%);}
+  68%,80% {transform:translateY(-50%);}
+  85%,97% {transform:translateY(-25%);}
 }
