@@ -1,1 +1,7 @@
 name: Darren Eng
+
+sass:
+  sass_dir: css/_sass
+  style: compressed
+
+url: https://darreneng.com/

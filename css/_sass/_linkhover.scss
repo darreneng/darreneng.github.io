@@ -1,0 +1,42 @@
+// Animate Links
+
+a {
+    margin-bottom: 0;
+    display: inline-block;
+    position: relative;
+    color: #a22c26;
+    text-decoration: none;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    transform: translate(0, 0)
+}
+
+a:before {
+    content: '→';
+    position: absolute;
+    top: 55%;
+    font-size: 16px;
+    opacity: 0;
+    color: #e1b26c;
+    -webkit-transform: translate(-400%, -50%);
+    -moz-transform: translate(-400%, -50%);
+    transform: translate(-400%, -50%);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
+
+a:hover {
+    color: #e1b26c;
+    text-decoration: none;
+    -webkit-transform: translate(20px, 0);
+    -moz-transform: translate(20px, 0);
+    transform: translate(20px, 0)
+}
+
+a:hover:before {
+    opacity: 1;
+    -webkit-transform: translate(-20px, -50%);
+    -moz-transform: translate(-20px, -50%);
+    transform: translate(-20px, -50%)
+}
