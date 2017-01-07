@@ -2,40 +2,61 @@
 ---
 
 // Styles for animating text banner
-@import "textbanner";
+@import 'textbanner';
 // Styles for arrow animation for links
-@import "linkhover";
+@import 'linkhover';
 
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #F8F8F3;
 }
 
-h1 {
-  font-size: inherit;
-  line-height: 1.3em;
-}
 
-// Wraps everything on page (outside container)
+// Wraps everything on page (outside container and footer)
 .wrapper {
-  font-size: 40px;
   font-family: 'Raleway', sans-serif;
   min-height: 100%;
   position: relative;
+  color: #02224b;
 }
 
-// Wraps all text (inside container)
+.blurb {
+  line-height: 1.3em;
+}
+
+$blurb-text-font-size: 40px;
+
+@media screen and (min-width: 640px) {
+  .blurb {
+    font-size: $blurb-text-font-size;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .blurb {
+    font-size: $blurb-text-font-size * .75;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .blurb {
+    font-size: $blurb-text-font-size * .5;
+  }
+}
+
 $footer-height: 60px;
+
+// Wraps all text (inside container and before footer)
 .content {
-  padding-top: 4%;
   max-width: 912px;
   padding-bottom: $footer-height;
+  padding-top: 4%;
 }
 
 .footer {
   height: $footer-height;
-  font-size: 14px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -45,8 +66,21 @@ $footer-height: 60px;
 }
 
 .social-link {
-    margin-right: 20px;
-    padding: 10px;
-    display: inline-block;
-    cursor: pointer
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .social-link {
+    font-size: 12px;
+    margin-right: 15px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  .social-link {
+    font-size: 16px;
+    margin-right: 20px
+  }
 }
