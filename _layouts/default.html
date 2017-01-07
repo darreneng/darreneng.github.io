@@ -5,23 +5,20 @@
 
 <body>
 
+  <div class="wrapper">
+    <div class="container">
+        <div class="content">
+          {% include text.html %}
+          <h1>My name is Darren. Nice to meet you!</h1>
+          <h1>I'm an undergraduate computer science student at UCSD.</h1>
+          <h1>I like coding, building awesome things, and tacos.
+            <a href="mailto:darrenle9@gmail.com?subject=Hi Darren!">Get in touch!</a>
+          </h1>
+        </div><!-- /.content -->
+    </div> <!-- /.container -->
 
-  <div class="container">
-    <div class="wrapper">
-      <div class="content">
-        {% include text.html %}
-        <h1>Hi, I'm Darren. Nice to meet you!</h1>
-        <h1>I'm an undergraduate computer science student at UCSD.</h1>
-      </div><!-- /.content -->
-    </div><!--/.wrapper -->
-  </div> <!-- /.container -->
-
-  <div class="footer">
-    <ul>
-      <li class="social-link"><a href="https://github.com/darreneng">Github</a></li>
-      <li class="social-link"><a href="https://linkedin.com/in/darrenlocktineng">LinkedIn</a></li>
-    </ul>
-  </div>
+    {% include footer.html %}
+  </div><!-- /.wrapper -->
 
   {% include scripts.html %}
 

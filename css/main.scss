@@ -1,17 +1,36 @@
 ---
 ---
 
-body {
-    font-family: 'Raleway', sans-serif;
-    padding-bottom: 70px;
-    margin-bottom: 0px;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
+h1 {
+  font-size: inherit;
+  line-height: 1.3em;
+}
+
+// Wraps everything on page (outside container)
 .wrapper {
+  font-size: 40px;
+  font-family: 'Raleway', sans-serif;
+  min-height: 100%;
+  position: relative;
+}
+
+// Wraps all text (inside container)
+$footer-height: 60px;
+.content {
   padding-top: 4%;
+  max-width: 912px;
+  padding-bottom: $footer-height;
 }
 
 .footer {
+  height: $footer-height;
+  font-size: 14px;
   position: absolute;
   right: 0;
   bottom: 0;
@@ -21,6 +40,7 @@ body {
 }
 
 .social-link {
+    margin-right: 20px;
     padding: 10px;
     display: inline-block;
     cursor: pointer
@@ -58,6 +78,7 @@ a:before {
 
 a:hover {
     color: #e1b26c;
+    text-decoration: none;
     -webkit-transform: translate(20px, 0);
     -moz-transform: translate(20px, 0);
     transform: translate(20px, 0)
@@ -74,10 +95,9 @@ a:hover:before {
 ***  Text Animations
 ************************************/
 .text-banner {
-  font-size: 35px;
+  font-size: 62px;
   line-height: 1.2em;
   height: 1.2em;
-  overflow: hidden;
 }
 
 .visible {
@@ -88,13 +108,13 @@ a:hover:before {
   &:before {
     content:'[';
     left: 0;
-    line-height:40px;
+    line-height:inherit;
     float: left;
   }
   &:after {
     content:']';
     right: 0;
-    line-height:40px;
+    line-height:inherit;
     float: right;
   }
   &:after, &:before {
