@@ -7,19 +7,8 @@ body {
     margin-bottom: 0px;
 }
 
-p {
-    //font-family: 'Libre Baskerville', serif;
-}
-
-h1 {
-  position: relative;
-}
-
-.jumbotron {
-    color: #fff;
-    background-color: #159957;
-    background-image: linear-gradient(120deg, #155799, #159957);
-    margin-bottom: 0;
+.wrapper {
+  padding-top: 4%;
 }
 
 .footer {
@@ -84,61 +73,52 @@ a:hover:before {
 /************************************
 ***  Text Animations
 ************************************/
-.content {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  transform: translate(-50%, -50%);
+.text-banner {
   font-size: 35px;
-  line-height: 40px;
-  font-family: 'Raleway', sans-serif;
-  //color: #ecf0f1;
-  color: black;
-  height: 160px;
+  line-height: 1.2em;
+  height: 1.2em;
   overflow: hidden;
 }
 
 .visible {
-  font-weight:600;
+  max-width: 15em;
   overflow:hidden;
-  height:40px;
-  padding:0 40px;
+  height: 1.2em;
 
   &:before {
     content:'[';
     left: 0;
     line-height:40px;
+    float: left;
   }
   &:after {
     content:']';
-    position:absolute;
     right: 0;
     line-height:40px;
+    float: right;
   }
   &:after, &:before {
-    position:absolute;
-    top:0;
     color:#16a085;
-    font-size:42px;
+    font-size:1.2em;
     -webkit-animation-name: opacity;
     -webkit-animation-duration: 2s;
     -webkit-animation-iteration-count: infinite;
     animation-name: opacity;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-
   }
 }
 
-p {
-  display:inline;
+#hello {
+  padding-left: 1em;
   float:left;
   margin:0;
 }
 
 #name-list {
   margin-top:0;
-  padding-left:110px;
+  padding-left:2rem; // default 110px
+  display: inline-block;
   text-align:left;
   list-style:none;
   -webkit-animation-name: change;
@@ -150,7 +130,7 @@ p {
 }
 
 #name-list li {
-  line-height:40px;
+  line-height:inherit;
   margin:0;
 }
 
